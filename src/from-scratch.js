@@ -7,6 +7,33 @@ const person = {
   hobbies: ['running', 'biking', 'baking'],
 }
 
+const fighters = {
+  name: 'Fighters',
+  sport: 'basketball',
+  wins: 3,
+  location: {
+    city: 'Bridgeport',
+    state: 'CT',
+  },
+  matches: [
+    {
+      teamName: 'Dunkaroos',
+      skill: 9,
+      wins: 12,
+    },
+    {
+      teamName: 'Space Jammers',
+      skill: 10,
+      wins: 16,
+    },
+    {
+      teamName: 'Mustangs',
+      skill: 6,
+      wins: 10,
+    },
+  ]
+}
+
 // Functions Start here --------------------------
 const coolGreeting = (person) => {
   if (person.isCool === true) {
@@ -46,10 +73,16 @@ const listHobbies = (person) => {
   };
 };
 
-const getNextOpponent = () => {
+const getNextOpponent = (team) => {
+  if (team.matches && team.matches.length > 0) {
+    return team.matches[0].teamName;
+  } else {
+    return null;
+  };
 };
 
-const listAllKeys = () => {
+const listAllKeys = (object) => {
+  return Object.keys(object);
 };
 
 const listAllValues = () => {
