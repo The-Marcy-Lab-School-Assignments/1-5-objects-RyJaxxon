@@ -2,8 +2,11 @@ const person = {
   name: 'Sara',
   bio: 'Too cool 4 skool.',
   age: 32,
-  isCool: true
+  isCool: true,
+  friends: ['joey', 'ryan', 'bobby'],
+  hobbies: ['running', 'biking', 'baking'],
 }
+
 // Functions Start here --------------------------
 const coolGreeting = (person) => {
   if (person.isCool === true) {
@@ -12,7 +15,7 @@ const coolGreeting = (person) => {
     return `Greetings ${person.name}, how have you been lately?`
   };
 };
-console.log(coolGreeting(person));
+// console.log(coolGreeting(person));
 
 const haveBirthday = (person) => {
   person.age += 1
@@ -33,10 +36,14 @@ const carMaker = (name, maker, year) => {
   return car
 };
 
-const weAreNotFriends = () => {
+const weAreNotFriends = (person) => {
+  return person.friends.pop()
 };
 
-const listHobbies = () => {
+const listHobbies = (person) => {
+  for (const hobby of person.hobbies) {
+    console.log(`${person.name} likes ${hobby}.`)
+  };
 };
 
 const getNextOpponent = () => {
