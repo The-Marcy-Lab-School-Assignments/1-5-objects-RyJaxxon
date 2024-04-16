@@ -116,14 +116,6 @@ const convertToMatrix = (object) => {
   };
 };
 
-// const convertToMatrix = (object) => {
-//   console.log(Object.keys(object[0]));
-//   for (const obj of object) {
-//     matrix.push(Object.values(obj));
-//   }
-//   return matrix;
-// }
-
 console.log(convertToMatrix([]))
 
 module.exports = {
