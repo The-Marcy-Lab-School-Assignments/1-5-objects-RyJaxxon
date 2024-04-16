@@ -34,6 +34,19 @@ const fighters = {
   ]
 }
 
+const users = [
+  {
+    name: 'Sara',
+    age: 30,
+    bio: 'What a legend',
+  },
+  {
+    name: 'Bob',
+    age: 30,
+    bio: "Kind of mean if we're being honest",
+  },
+];
+// console.log(Object.keys(users))
 // Functions Start here --------------------------
 const coolGreeting = (person) => {
   if (person.isCool === true) {
@@ -85,11 +98,33 @@ const listAllKeys = (object) => {
   return Object.keys(object);
 };
 
-const listAllValues = () => {
+const listAllValues = (object) => {
+  return Object.values(object)
 };
 
-const convertToMatrix = () => {
+const convertToMatrix = (object) => {
+  let matrix = []
+  if (object.length === 0) {
+    return matrix
+  } else {
+    let keys = Object.keys(object[0]);
+    matrix.push(keys)
+    for (const key of object) {
+      matrix.push(Object.values(key))
+    };
+    return matrix
+  };
 };
+
+// const convertToMatrix = (object) => {
+//   console.log(Object.keys(object[0]));
+//   for (const obj of object) {
+//     matrix.push(Object.values(obj));
+//   }
+//   return matrix;
+// }
+
+console.log(convertToMatrix([]))
 
 module.exports = {
   coolGreeting,
